@@ -72,8 +72,10 @@ export default Reapp(class extends React.Component {
           }
         </View>
 
+        {
         //这一行的参数很重要，可以把上一个组件里的props.article传递到下一个视图的props.article中
         //比如从ArticleItem跳转到Article的时候
+        }
         {Child &&
           Child({ article: article })
         }
