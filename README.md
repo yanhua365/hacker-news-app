@@ -21,3 +21,6 @@ npm install
 reapp run -V
 reapp run -d
 ```
+## 学习笔记
+
+Fork这个项目主要是研究reapp的使用，记录一些学习笔记。

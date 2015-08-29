@@ -36,6 +36,9 @@ export default Reapp(class extends React.Component {
     const store = this.context.store();
     const articles = store.get('hotArticles');
     const id = this.context.router.getCurrentParams().id;
+    //通过id查询article主要是为了应对直接输入url（article/id）的方式进入文章详情页
+    //主页面的render第一次会被渲染
+    //这样会在这里先查询出article的
     const article = id && store.getIn(['articles', Number(id)]);
     const Child = this.props.child;
 
@@ -69,6 +72,8 @@ export default Reapp(class extends React.Component {
           }
         </View>
 
+        //这一行的参数很重要，可以把上一个组件里的props.article传递到下一个视图的props.article中
+        //比如从ArticleItem跳转到Article的时候
         {Child &&
           Child({ article: article })
         }
